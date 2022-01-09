@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>FAQ &mdash; TrackMe 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Release notes" href="releasenotes.html" />
+    <link rel="prev" title="REST API Reference Manual" href="rest_api_reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> TrackMe
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation and configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment &amp; Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="itsi_integration.html">Splunk ITSI integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cribl_integration.html">Cribl LogStream integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor_forwarders.html">Monitor Splunk instances forwarding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api_reference.html">REST API Reference Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshoot</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-data-name-useful-for">What is the “data name” useful for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#is-the-priority-a-configurable-value-if-yes-how-do-you-configure-it-if-not-how-does-the-app-derives-it">Is the “priority” a configurable value? If yes how do you configure it, if not how does the app derives it?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-the-priority-be-externally-managed">Can the priority be externally managed?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-do-we-need-both-short-and-long-term-trackers">Why do we need both short and long term trackers?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-the-app-determines-what-s-a-good-status-and-what-s-a-bad-status">How the app determines what’s a good status and what’s a bad status?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-can-you-see-a-list-of-deleted-entries-can-you-undelete-an-entry">How can you see a list of deleted entries? Can you undelete an entry?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-elastic-sources-and-what-are-they-useful-for">What are Elastic Sources and what are they useful for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-deal-with-sourcetypes-that-are-emitting-data-occasionally-or-sporadically-does-trackme-automatically-detects-this">How to deal with sourcetypes that are emitting data occasionally or sporadically? Does TrackMe automatically detects this?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-purpose-of-the-enable-disable-button">What is the purpose of the enable / disable button?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-s-the-difference-between-disabled-and-permanently-deleted">What’s the difference between disabled and (permanently) deleted?</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versioning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrackMe</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>FAQ</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/FAQ.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p><em>You will find in this page different smart and understandable questions, which are made available for everyone’s value, thank you so much for asking!</em></p>
+<div class="section" id="what-is-the-data-name-useful-for">
+<h2>What is the “data name” useful for?<a class="headerlink" href="#what-is-the-data-name-useful-for" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="userguide.html#data-sources-tracking-and-features"><span class="std std-ref">Data Sources tracking and features</span></a></p>
+<p>In the context of data source, the field <strong>“data_name”</strong> represents the unique identifier of the data source.</p>
+<ul class="simple">
+<li><p>for regular data sources created by TrackMe, this is equal to combination of &lt;index&gt;:&lt;sourcetype&gt;.</p></li>
+<li><p>for Elastic Sources, the definition defined when the entity is created</p></li>
+</ul>
+<p>The data_name unique identifier is used in different parts of the application, such as the search trackers which rely on it to identify the data source.</p>
+<p><strong>What are the numbers in the “lag summary” column?</strong></p>
+<p>See <a class="reference internal" href="userguide.html#data-sources-tracking-and-features"><span class="std std-ref">Data Sources tracking and features</span></a></p>
+<p>The field <strong>“lag summary (lag event / lag ingestion)”</strong> is exposed within the UI to summarise the two key metrics handled by TrackMe to monitor the Splunk data.</p>
+<p>The field is composed by:</p>
+<ul class="simple">
+<li><p>lag_ingestion_sec: delta between index time and latest event timestamp, which can be represented as: <code class="docutils literal notranslate"><span class="pre">(_indextime</span> <span class="pre">-</span> <span class="pre">_time)</span></code></p></li>
+<li><p>lag_event_sec: delta between now when the measure is taken (when the tracker was run), and the latest event timestamp, which can be represented as <code class="docutils literal notranslate"><span class="pre">(now()</span> <span class="pre">-</span> <span class="pre">_time)</span></code></p></li>
+</ul>
+<p>In this context:</p>
+<ul class="simple">
+<li><p>event time stamp is the _time field, which is the time stamp that Splunk affected for a given event when it was indexed on disk</p></li>
+<li><p>index time is the _indextime field, which is the epoch time corresponding to the moment when Splunk indexed the event on disk</p></li>
+</ul>
+<p>Depending on the use cases, both key performance metrics might be very important, or potentially one will matter more than the other.</p>
+<p>For continuous data flow, you need to know that the data is being indexed with the expected performance, and that you are not running late due to some underneath performance issues, this is where the lag_ingestion_sec matters.</p>
+<p>On the other side, you need as well to be able to detect if the data flow is somehow broken, and the ingestion stopped unexpectly, this is where the lag_event_sec matters.</p>
+</div>
+<div class="section" id="is-the-priority-a-configurable-value-if-yes-how-do-you-configure-it-if-not-how-does-the-app-derives-it">
+<h2>Is the “priority” a configurable value? If yes how do you configure it, if not how does the app derives it?<a class="headerlink" href="#is-the-priority-a-configurable-value-if-yes-how-do-you-configure-it-if-not-how-does-the-app-derives-it" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="userguide.html#priority-management"><span class="std std-ref">Priority management</span></a></p>
+<p>The <strong>“priority”</strong> field is configurable within the UI, when you click on any entity and enter the modification space (<code class="docutils literal notranslate"><span class="pre">Modify</span></code> bytton).</p>
+<p>Its value is defined automatically when the entity is discovered, stored in the KVstores, its default value is defined by the following macro:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[trackme_default_priority]</span></code></p>
+<p>Each iteration of the trackers preserve the priority value.</p>
+<p>The priority is used in the main charts and single forms in the UI to expose the current situation.
+As well, the OOTB alerts are filtering by default on a given list of priorities, driven by the following macro:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[trackme_alerts_priority]</span></code></p>
+<p>By default, all entities are added as “medium”, one option can be to update the macro to be looking at high only, such that you qualify for each entity is you want to be alerted on it and define it to high priority.
+Another option would be to define everything to low besides what you qualify and want to be monitoring and get alerted.</p>
+<p>The purpose of the priority field is to provide a granularity in which entities should be generating alerts, while all information remains easily visible and summarised in the UI.</p>
+</div>
+<div class="section" id="can-the-priority-be-externally-managed">
+<h2>Can the priority be externally managed?<a class="headerlink" href="#can-the-priority-be-externally-managed" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="userguide.html#priority-management"><span class="std std-ref">Priority management</span></a></p>
+<p>In some use cases you may want to retrieve and/or define the value of the priority field from an external source such as a CMDB lookup stored in Splunk. (specially for data hosts)</p>
+<p>As the value of a priority is preserved over iterations, a simple search that does a mapping and finally a KVstore update could be scheduled and run on a regular basis.</p>
+<p>Some logic similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">inputlookup</span> <span class="n">trackme_host_monitoring</span> <span class="o">|</span> <span class="nb">eval</span> <span class="n">key</span><span class="o">=</span><span class="n">_key</span>
+<span class="o">|</span> <span class="n">lookup</span> <span class="o">&lt;</span><span class="n">my</span> <span class="n">CMDB</span> <span class="n">lookup</span><span class="o">&gt;</span> <span class="n">data_host</span> <span class="k">as</span> <span class="n">host</span> <span class="n">OUTPUT</span> <span class="n">priority</span> <span class="k">as</span> <span class="n">cmdb_priority</span>
+<span class="o">|</span> <span class="nb">eval</span> <span class="n">priority</span><span class="o">=</span><span class="k">if</span><span class="p">(</span><span class="n">isnotnull</span><span class="p">(</span><span class="n">cmdb_priority</span><span class="p">),</span> <span class="n">cmdb_priority</span><span class="p">,</span> <span class="n">priority</span><span class="p">)</span>
+<span class="o">|</span> <span class="n">outputlookup</span> <span class="n">trackme_host_monitoring</span> <span class="n">append</span><span class="o">=</span><span class="n">t</span> <span class="n">key_field</span><span class="o">=</span><span class="n">key</span>
+</pre></div>
+</div>
+<p>This search would take input the content of the lookup, perform a mapping to retrieve the priority value from the CMDB, run a simplistic evaluation and finally updates the KVstore entries.</p>
+</div>
+<div class="section" id="why-do-we-need-both-short-and-long-term-trackers">
+<h2>Why do we need both short and long term trackers?<a class="headerlink" href="#why-do-we-need-both-short-and-long-term-trackers" title="Permalink to this headline">¶</a></h2>
+<p>This is required to cover most of the use cases, in the most performing manner, at the lowest cost for the environment.</p>
+<p>For reference:</p>
+<ul class="simple">
+<li><p>Short term trackers run every 5 minutes, earliest=-4h latest=+4h</p></li>
+<li><p>Long term trackers run once per hour, earliest=-7d latest=+4h</p></li>
+</ul>
+<p>There are different scenarios where the short term tracker would not be able to catch information about a data flow, for example if you are recovering from an outage and the data is still running late (you are catching up), or if you are indexing data in the past which would be out of the time frame scope of the short term trackers.</p>
+<p>For these reasons and for performance considerations, the search workload is split into two main trackers which each cover a specific time frame.</p>
+</div>
+<div class="section" id="how-the-app-determines-what-s-a-good-status-and-what-s-a-bad-status">
+<h2>How the app determines what’s a good status and what’s a bad status?<a class="headerlink" href="#how-the-app-determines-what-s-a-good-status-and-what-s-a-bad-status" title="Permalink to this headline">¶</a></h2>
+<p>This depends on different factors, and depends on the configuration of the entity too, but in short:</p>
+<ul class="simple">
+<li><p>Up to the version 1.2.18, if either the lag ingestion or the lag event exceeds the max lag allowed value, the entity status will be <code class="docutils literal notranslate"><span class="pre">red</span></code></p></li>
+<li><p>Starting version 1.2.19, it is possible to define if the status should be defined depending of both KPIs, the lag ingestion only or the lag event only, depending on the configuration the status will <code class="docutils literal notranslate"><span class="pre">red</span></code> if the monitoring conditions are not met</p></li>
+<li><p>If Outliers detection is enabled, and if the Outliers status does not meet the policy, the status will be <code class="docutils literal notranslate"><span class="pre">red</span></code></p></li>
+<li><p>If TrackMe detects data ingested in the future, that exceeds the tolerance defined in the macro “trackme_future_indexing_tolerance”, the status will be <code class="docutils literal notranslate"><span class="pre">orange</span></code></p></li>
+<li><p>If the status is red, and if the week days monitoring policy implies not triggering, the status will be <code class="docutils literal notranslate"><span class="pre">orange</span></code></p></li>
+<li><p>In addition for data and metric hosts, if the entity is red and is part of a logical group which status complies with its policy (example 50% available and only of the 2 members is red), the status will be <code class="docutils literal notranslate"><span class="pre">blue</span></code></p></li>
+</ul>
+<p>The OOTB Alerts by default alert on the <code class="docutils literal notranslate"><span class="pre">red</span></code> status only.</p>
+<p>For each status condition, a clear description is provided as part of a message which is visible in the UI, visible as focus over the icon, and as part of the alert output.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Alert</span><span class="p">:</span> <span class="n">data</span> <span class="n">source</span> <span class="n">status</span> <span class="ow">is</span> <span class="n">red</span><span class="p">,</span> <span class="n">monitoring</span> <span class="n">conditions</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">met</span> <span class="n">due</span> <span class="n">to</span> <span class="n">lagging</span> <span class="ow">or</span> <span class="n">interruption</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">data</span> <span class="n">flow</span><span class="p">,</span> <span class="n">latest</span> <span class="n">data</span> <span class="n">available</span> <span class="ow">is</span> <span class="mi">24</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="mi">2020</span> <span class="mi">19</span><span class="p">:</span><span class="mi">30</span> <span class="p">(</span><span class="mi">7149</span> <span class="n">seconds</span> <span class="kn">from</span> <span class="nn">now</span><span class="p">)</span> <span class="ow">and</span> <span class="n">ingestion</span> <span class="n">latency</span> <span class="ow">is</span> <span class="n">approximately</span> <span class="mi">30</span> <span class="n">seconds</span><span class="p">,</span> <span class="nb">max</span> <span class="n">lag</span> <span class="n">configured</span> <span class="ow">is</span> <span class="mi">125</span> <span class="n">seconds</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-can-you-see-a-list-of-deleted-entries-can-you-undelete-an-entry">
+<h2>How can you see a list of deleted entries? Can you undelete an entry?<a class="headerlink" href="#how-can-you-see-a-list-of-deleted-entries-can-you-undelete-an-entry" title="Permalink to this headline">¶</a></h2>
+<p>A user can delete an entity stored in the KVstore, assuming the user has write permissions over the KVstores and other objects. (admin, part of trackme_admin role or custom allowed)</p>
+<p>The deletion feature is provided natively via the UI, when an entity is deleted the following workflow happens:</p>
+<ul class="simple">
+<li><p>The UI retrieves the key id of the record in the KVstore and performs a DELETE rest call over the KVstore endpoint</p></li>
+<li><p>In addition, the full entity record is logged to the audit KVstore, and exposed via the UI within the audit changes tab</p></li>
+<li><p>When the user deletes an entity, it can be delete temporary or permanently</p></li>
+<li><p>If the deletion is temporary, the entity will be recreated automatically if it is still actively sending data to Splunk, and the conditions (allow lists, block lists…) permit it</p></li>
+<li><p>If the deletion is permanent, an additional flag is added to the record in the audit, this flag allow the trackers to exclude creating an entitythat was permanently deleted</p></li>
+</ul>
+<p>While it is not supported at the moment to undo the deletion, the audit record contains all the information related to the entitypreviously deleted.</p>
+<p>Finally, the audit changes tab provides the relevant filters to allow accessing to all deletion events, including answers to when / who / how and why if an update note was added filled during the operation.</p>
+</div>
+<div class="section" id="what-are-elastic-sources-and-what-are-they-useful-for">
+<h2>What are Elastic Sources and what are they useful for?<a class="headerlink" href="#what-are-elastic-sources-and-what-are-they-useful-for" title="Permalink to this headline">¶</a></h2>
+<p>The Elastic source concept is covered in deep in the <a class="reference internal" href="userguide.html#elastic-sources"><span class="std std-ref">Elastic sources</span></a> documentation, wich includes comprehensive examples.</p>
+</div>
+<div class="section" id="how-to-deal-with-sourcetypes-that-are-emitting-data-occasionally-or-sporadically-does-trackme-automatically-detects-this">
+<h2>How to deal with sourcetypes that are emitting data occasionally or sporadically? Does TrackMe automatically detects this?<a class="headerlink" href="#how-to-deal-with-sourcetypes-that-are-emitting-data-occasionally-or-sporadically-does-trackme-automatically-detects-this" title="Permalink to this headline">¶</a></h2>
+<p>There are no easy answers to this question, however:</p>
+<ul class="simple">
+<li><p>The default concept of data sources tracking relies on entities broken per index and sourcetype, this can be extended easily using the Elastic sources feature to fullfil any kind of requirements and make sure that a data source represents the data pipeline</p></li>
+<li><p>The data hosts tracking feature provides the vision broken on a per host basis (using the Splunk host Metadata)</p></li>
+<li><p>TrackMe does not replace the knowledge you have regarding the way you are ingesting data into Splunk, instead it provides various features and options you can use to configure what should raise an alert or not, and how</p></li>
+<li><p>The basic configuration for data tracking are related to the latency and the delta in seconds between the latest time data was indexed in Splunk and now</p></li>
+<li><p>In addition, the volume Outliers feature allows detecting automatically behaviour changes in the volume of data indexed in Splunk for a given sourcetype</p></li>
+<li><p>In most cases, you should focus on the most valuable and important sourcetypes, TrackMe provides different levels of features (allowlists / blocklists) to exclude automatically data of low interest, and the priority feature allows granular definition of the importance of an entity</p></li>
+<li><p>A sourcetype that comes very occasionally in Splunk might be something that you need to track carefully, however if it does you need to define the tresholds accordlingy and TrackMe provides different options to do so on a per data source basis for instance</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-the-purpose-of-the-enable-disable-button">
+<h2>What is the purpose of the enable / disable button?<a class="headerlink" href="#what-is-the-purpose-of-the-enable-disable-button" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of the enable / disable button is to provide a way to disable the monitoring of an entity, without removing it from the collections entirely.</p>
+<p>There are different aspects to consider:</p>
+<ul class="simple">
+<li><p>Sometimes you have some sourcetypes you do not care about really, you can use allowlisting / blocklisting, or disable it</p></li>
+<li><p>When an entity is disabled, the value of the field “data_monitored_state” is set to false (default is true when it is discovered initially)</p></li>
+<li><p>The UI by default filters on entities which are being monitored effectively, you can show disabled entities by using the “Filter monitored_state:” filter form, or looking at the lookup content manually</p></li>
+<li><p>Out of the box alerts do not take in consideration disabled entities</p></li>
+<li><p>Various other parts of the application will as well stop considering these disabled entities, for instance there will not be metrics generated anymore, etc.</p></li>
+<li><p>When an entity is disabled, all information are preserved, if you re-enable a disabled entity, TrackMe will simply start to consider it again and refresh its state and other actions automatically</p></li>
+<li><p>You should consider disabling entities rather than deleting entities if these are actively generating data to Splunk and cannot be excluded easily by allow listing / block listing</p></li>
+<li><p>The reason is that if you delete an active entity, in temporary deletion mode it will be re-added very quickly (when the trackers will capture activity for it), and permanent mode it would re-added after a certain period of time</p></li>
+</ul>
+</div>
+<div class="section" id="what-s-the-difference-between-disabled-and-permanently-deleted">
+<h2>What’s the difference between disabled and (permanently) deleted?<a class="headerlink" href="#what-s-the-difference-between-disabled-and-permanently-deleted" title="Permalink to this headline">¶</a></h2>
+<p>The deletion of entities is explained in details in <a class="reference internal" href="userguide.html#deletion-of-entities"><span class="std std-ref">Deletion of entities</span></a>.</p>
+<p>In short, the purpose of the permanent deletion is to prevent an entity from being disovered again after it is deleted.</p>
+<p>To achieve this, when an entity is permanently deleted the value of the field “change_type” is defined to “delete permanent”, when the entity is temporarily deleted, the value is set to “delete tempoary”.</p>
+<p>Then, Trackers reports wich perform discovery of the data use a filter to exclude entities that have been permanently deleted, such that even if the entity is still actively sending data to Splunk, TrackMe will ignore it automatically as long as the audit record is available. (by default audit records are purged after 90 days)</p>
+<p>The UI does not provide a function to undo a permanent deletion, however updating or purging the audit record manually would allow to re-create an entity after it was permanently deleted.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="releasenotes.html" class="btn btn-neutral float-right" title="Release notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rest_api_reference.html" class="btn btn-neutral float-left" title="REST API Reference Manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2021, TrackMe Limited, U.K..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

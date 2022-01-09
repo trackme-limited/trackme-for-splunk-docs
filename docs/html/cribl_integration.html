@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Cribl LogStream integration &mdash; TrackMe 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Monitor Splunk instances forwarding" href="monitor_forwarders.html" />
+    <link rel="prev" title="Splunk ITSI integration" href="itsi_integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> TrackMe
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation and configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment &amp; Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="itsi_integration.html">Splunk ITSI integration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cribl LogStream integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#enable-the-cribl-mode">Enable the Cribl mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cribl-mode-data-sources">Cribl mode data sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cribl-logstream-pre-processing-pipelines-and-cribl-pipe-field">Cribl LogStream pre-processing pipelines and cribl_pipe field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#handling-both-cribl-mode-and-regular-or-additional-custom-modes">Handling both Cribl mode and regular or additional custom modes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitor_forwarders.html">Monitor Splunk instances forwarding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api_reference.html">REST API Reference Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshoot</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versioning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrackMe</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Cribl LogStream integration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/cribl_integration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cribl-logstream-integration">
+<h1>Cribl LogStream integration<a class="headerlink" href="#cribl-logstream-integration" title="Permalink to this headline">¶</a></h1>
+<a class="with-border reference internal image-reference" href="_images/cribl_logo.png"><img alt="cribl_logo.png" class="with-border align-center" src="_images/cribl_logo.png" style="width: 196px;" /></a>
+<p><strong>If you are using Cribl LogStream, you can easily integrate TrackMe in a just a few steps, using the excellent native Cribl LogStream design, TrackMe will take into account the concept of pipelines to create, monitor and render the data sources automatically.</strong></p>
+<p><em>In a nutshell:</em></p>
+<ul class="simple">
+<li><p>A configuration parameter is available in TrackMe to enable the Cribl mode</p></li>
+<li><p>Once activated, the Cribl mode updates the way TrackMe is identifying and breaking the data sources</p></li>
+<li><p>To achieve this, TrackMe relies on the <strong>cribl_pipe</strong> indexed field automatically created by LogStream when data is indexed in Splunk</p></li>
+<li><p>Related searches transparenly use the <strong>cribl_pipe</strong> information, that accurately represents the data pipeline as it should be monitored, from LogStream to Splunk</p></li>
+</ul>
+<div class="section" id="enable-the-cribl-mode">
+<h2>Enable the Cribl mode<a class="headerlink" href="#enable-the-cribl-mode" title="Permalink to this headline">¶</a></h2>
+<p><strong>To enable the Cribl mode, go in “TrackMe manage and configure” and click on the enable Cribl mode:</strong></p>
+<a class="with-border reference internal image-reference" href="_images/enable_cribl_mode.png"><img alt="enable_cribl_mode.png" class="with-border align-center" src="_images/enable_cribl_mode.png" style="width: 1200px;" /></a>
+<p><strong>Once the Cribl mode is enabled, perform a reset of the data source collection:</strong></p>
+<a class="with-border reference internal image-reference" href="_images/cribl_reset_collection.png"><img alt="cribl_reset_collection.png" class="with-border align-center" src="_images/cribl_reset_collection.png" style="width: 1200px;" /></a>
+</div>
+<div class="section" id="cribl-mode-data-sources">
+<h2>Cribl mode data sources<a class="headerlink" href="#cribl-mode-data-sources" title="Permalink to this headline">¶</a></h2>
+<p><strong>Let’s assume the following simple scenario:</strong></p>
+<ul class="simple">
+<li><p>Cribl LogStream receives incoming data from any kind of sources, and streams to Splunk with associated pipelines</p></li>
+<li><p>In our example, we instruct LogStream to index data in Splunk into a few indexes, but we have many more pipelines since we perform various operations on LogStream, indexes and sourcetypes are likely fed by much more than just one pipeline</p></li>
+<li><p>In regular TrackMe mode, TrackMe would represent the data sources broken by indexes and sourcetypes, however, this does not represent what the incoming data flow is underneath, and does not provide the valuable information and monitoring layer we need</p></li>
+<li><p>Once we enable the Cribl mode, TrackMe relies on the <code class="docutils literal notranslate"><span class="pre">cribl_pipe</span></code> pipeline information to properly distinguish the real data flow as it is from the data provider (Cribl LogStream) perspective</p></li>
+</ul>
+<p><em>Cribl LogStream pipeline examples:</em></p>
+<a class="with-border reference internal image-reference" href="_images/cribl_pipelines.png"><img alt="cribl_pipelines.png" class="with-border align-center" src="_images/cribl_pipelines.png" style="width: 1200px;" /></a>
+<p><em>In this example, the default TrackMe mode has different issues, we stream data to an index called “network”, however we have different pipelines that are potentially linked to multiple sources and from the LogStream point of view could be affected independently in case of an issue or misconfiguration:</em></p>
+<a class="with-border reference internal image-reference" href="_images/cribl_trackme1.png"><img alt="cribl_trackme1.png" class="with-border align-center" src="_images/cribl_trackme1.png" style="width: 1200px;" /></a>
+<p><em>Once we enable the Cribl mode, we see a very different picture, TrackMe automatically creates data sources broken by index, sourcetype and cribl_pipe:</em></p>
+<a class="with-border reference internal image-reference" href="_images/cribl_trackme2.png"><img alt="cribl_trackme2.png" class="with-border align-center" src="_images/cribl_trackme2.png" style="width: 1200px;" /></a>
+<p>Data sources are created as <code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">+</span> <span class="pre">&quot;:&quot;</span> <span class="pre">+</span> <span class="pre">sourcetype</span> <span class="pre">+</span> <span class="pre">&quot;:&quot;</span> <span class="pre">+</span> <span class="pre">cribl_pipe</span></code>, this represents the data flow from Cribl LogStream to Splunk.</p>
+<p>Every search actioned by trackMe now automatically recycles the cribl_pipe information naturally, such as latency tracking, data sampling, open in search buttons, etc:</p>
+<a class="with-border reference internal image-reference" href="_images/cribl_trackme3.png"><img alt="cribl_trackme3.png" class="with-border align-center" src="_images/cribl_trackme3.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/cribl_trackme4.png"><img alt="cribl_trackme4.png" class="with-border align-center" src="_images/cribl_trackme4.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/cribl_trackme5.png"><img alt="cribl_trackme5.png" class="with-border align-center" src="_images/cribl_trackme5.png" style="width: 1200px;" /></a>
+</div>
+<div class="section" id="cribl-logstream-pre-processing-pipelines-and-cribl-pipe-field">
+<h2>Cribl LogStream pre-processing pipelines and cribl_pipe field<a class="headerlink" href="#cribl-logstream-pre-processing-pipelines-and-cribl-pipe-field" title="Permalink to this headline">¶</a></h2>
+<p>If you have a proprocessing pipelines in your LogStream workflow, the <code class="docutils literal notranslate"><span class="pre">cribl_pipe</span></code> field becomes a multi-value indexed field that contains both the processing pipeline and pre-processing pipeline:</p>
+<a class="with-border reference internal image-reference" href="_images/cribl_preprocessing_pipeline.png"><img alt="cribl_preprocessing_pipeline.png" class="with-border align-center" src="_images/cribl_preprocessing_pipeline.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/cribl_preprocessing_pipeline1.png"><img alt="cribl_preprocessing_pipeline1.png" class="with-border align-center" src="_images/cribl_preprocessing_pipeline1.png" style="width: 1200px;" /></a>
+<p>In the TrackMe context, this means that for the same data source, we get at least two entities, one per pipeline and one for the pre-processing pipeline:</p>
+<a class="with-border reference internal image-reference" href="_images/cribl_preprocessing_pipeline2.png"><img alt="cribl_preprocessing_pipeline2.png" class="with-border align-center" src="_images/cribl_preprocessing_pipeline2.png" style="width: 1200px;" /></a>
+<p>From the TrackMe point of view, the pre-processing pipeline view has no value and all that we care about is the data flow itself, to get rid of these entities automatically, we can add a data_name blocklist based in a very simple regular expression:</p>
+<ul class="simple">
+<li><p>from the main TrackMe screen, go to “Manage: allowlists &amp; blocklists”</p></li>
+<li><p>add a new data_name blocklist according to the name of your pre-processing pipeline, in our case we will use <code class="docutils literal notranslate"><span class="pre">.*cribl:splunk_reduce_metadata</span></code></p></li>
+<li><p>once it has been added, existing entities are not taken into account anymore, and if new data sources are discovered, these will exclude the pre-processing pipeline automatically</p></li>
+</ul>
+<a class="with-border reference internal image-reference" href="_images/cribl_preprocessing_pipeline3.png"><img alt="cribl_preprocessing_pipeline3.png" class="with-border align-center" src="_images/cribl_preprocessing_pipeline3.png" style="width: 700px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/cribl_preprocessing_pipeline4.png"><img alt="cribl_preprocessing_pipeline4.png" class="with-border align-center" src="_images/cribl_preprocessing_pipeline4.png" style="width: 1200px;" /></a>
+<p>Congratulations!</p>
+<p>You have a now a comprehensive integration between the wonderful and amazing Cribl LogStream and TrackMe allowing you to track your Splunk data the easy way!</p>
+</div>
+<div class="section" id="handling-both-cribl-mode-and-regular-or-additional-custom-modes">
+<h2>Handling both Cribl mode and regular or additional custom modes<a class="headerlink" href="#handling-both-cribl-mode-and-regular-or-additional-custom-modes" title="Permalink to this headline">¶</a></h2>
+<p>In some cases, you may have both Cribl Logstream feeding Splunk, and regular other types of data coming from Universal, Heavy Forwarders, HTTP event collector and so forth.</p>
+<p>When TrackMe is configured in the Cribl mode, only data coming from Cribl Logstream will be taken into account, which happens because we expect a <code class="docutils literal notranslate"><span class="pre">cribl_pipe</span></code> indexed field for every data source to be discovered and maintained.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>You can rely on <a class="reference internal" href="userguide.html#hybrid-trackers"><span class="std std-ref">Hybrid trackers</span></a> to create any number of special trackers, and handle any additional use case as needed!</p></li>
+</ul>
+</div>
+<a class="with-border reference internal image-reference" href="_images/cribl_hybrid.png"><img alt="cribl_hybrid.png" class="with-border align-center" src="_images/cribl_hybrid.png" style="width: 1200px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="monitor_forwarders.html" class="btn btn-neutral float-right" title="Monitor Splunk instances forwarding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="itsi_integration.html" class="btn btn-neutral float-left" title="Splunk ITSI integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2021, TrackMe Limited, U.K..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Welcome to TrackMe - Data tracking system for Splunk &mdash; TrackMe 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="About" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> TrackMe
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation and configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment &amp; Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="itsi_integration.html">Splunk ITSI integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cribl_integration.html">Cribl LogStream integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor_forwarders.html">Monitor Splunk instances forwarding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api_reference.html">REST API Reference Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshoot</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versioning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">TrackMe</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to TrackMe - Data tracking system for Splunk</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-trackme-data-tracking-system-for-splunk">
+<h1>Welcome to TrackMe - Data tracking system for Splunk<a class="headerlink" href="#welcome-to-trackme-data-tracking-system-for-splunk" title="Permalink to this headline">¶</a></h1>
+<p><strong>TrackMe provides automated monitoring and visibility insight of your data sources, with a powerful user interface and workflow for Splunk product owners to detect and alert on lack of availability, abnormal latency, volume outliers detection and quality issues:</strong></p>
+<ul class="simple">
+<li><p>Discover and store key states information of data sources, data hosts and metric hosts availability</p></li>
+<li><p>Track local and remote Splunk deployments at scale, with out the box and custom hybrid models</p></li>
+<li><p>Provides a powerful user interface to manage activation states, configuration and quickly identify data availability failures</p></li>
+<li><p>Analyse and detect lack of data and performance lagging of data sources and hosts within your Splunk deployment</p></li>
+<li><p>Behaviour analytic with outlier detection based on machine learning outliers calculations</p></li>
+<li><p>Behaviour analytic with data sampling and event format recognition, monitor and detect anomalies in raw events to detect event format changes or misbehaviour based on builtin rules and extended with your own custom rules</p></li>
+<li><p>Create elastic sources for any kind of custom monitoring requirements based on tstats / raw / mstats / from searches to fullfill any requirements</p></li>
+<li><p>Record and investigate historical changes of statuses, as well as administrators changes (audit flipping and changes)</p></li>
+<li><p>Easy administration via graphical human interface from A to Z</p></li>
+<li><p>No matters the purpose of your Splunk deployment, trackMe will become an essential piece of your deployment, providing key value for PCI or compliance requirements</p></li>
+<li><p>Keep things under your control and be the first to know when data is not available, get alerted before your users get back to you!</p></li>
+</ul>
+<a class="with-border reference internal image-reference" href="_images/screenshot.png"><img alt="img001.png" class="with-border align-center" src="_images/screenshot.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/screenshot1.png"><img alt="img002.png" class="with-border align-center" src="_images/screenshot1.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/screenshot2.png"><img alt="img003.png" class="with-border align-center" src="_images/screenshot2.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/screenshot3.png"><img alt="img004.png" class="with-border align-center" src="_images/screenshot3.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/screenshot4.png"><img alt="img005.png" class="with-border align-center" src="_images/screenshot4.png" style="width: 1200px;" /></a>
+<p><strong>Why this application?</strong></p>
+<p>Splunk administrators and engineers have to spend a good amount of time and energy to on-board and monitor data sources, which becomes more and more complex and time consuming with the explosion of volume and variety of data.</p>
+<p>However, it is very frequent to realise after math that something went wrong, for some reason the sender stopped sending, an upgrade broke a configuration, a network rule was lost, an unexpected side effect of a change occurred, parsing issues are not detected…</p>
+<p>No administrator should be informed of an issue in the data flow by the customer or the end users, this is why you need pro-activity, costless and scalable availability monitoring.</p>
+<p>with the massive amount and variety of data sources, this becomes easily a painful and problematic activity, this application aims to drastically help you in these daily tasks.</p>
+<p>TrackMe provides a handy user interface associated with an efficient data discovery, state and alerting workflow.</p>
+<p>Made by Splunk admins for Splunk admins, the TrackMe application provides builtin powerful features to monitor and administer you data source monitoring the easy way!</p>
+<p><strong>Use cases for TrackMe?</strong></p>
+<p>No matters the purpose of your Splunk deployment, trackMe will easily become an essential and positive piece of your Splunk journey:</p>
+<ul class="simple">
+<li><p>Security Operation Centers (SOC) with or without Enterprise Security compliance: detect lack of data, abnormal latency potentially impacting your security posture</p></li>
+<li><p>PCI and compliance: deliver, alert and action</p></li>
+<li><p>Monitoring and insight visibility about your indexes, sourcetypes, events and metrics</p></li>
+<li><p>General data activity monitoring and detection of Zombie data</p></li>
+<li><p>Continous and automated data quality assessment</p></li>
+<li><p>PII data detection with custom regular expression based rules and data sampling</p></li>
+<li><p>many more!</p></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h1>Overview:<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about.html#trackme-at-splunk-conf-2021">TrackMe at Splunk .conf 2021</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="support.html#splunk-community">Splunk community</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#splunk-community-slack">Splunk community slack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#open-a-issue-in-git">Open a issue in Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#email-support">Email support</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="installation-and-configuration">
+<h1>Installation and configuration:<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Installation and configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compatibility.html#splunk-core-compatibility">Splunk core compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility.html#splunk-cloud-compatibility">Splunk Cloud compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility.html#python-compatibility">Python compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility.html#web-browser-compatibility">Web Browser compatibility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html#splunk-base">Splunk base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download.html#github">GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment &amp; Upgrades</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html#installation-target">Installation Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html#dependent-apps">Dependent Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html#indexes">Indexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html#installation-summary">Installation summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment.html#upgrading">Upgrading</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#step-1-deploy-trackme">Step 1: Deploy TrackMe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#step-2-configure-trackme-to-match-your-needs">Step 2: Configure TrackMe to match your needs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#step-3-rbac-and-access-policies">Step 3: RBAC and access policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#step-4-indexers-macro-definition">Step 4: Indexers macro definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#step-5-host-tags-enrichment">Step 5: host tags enrichment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#step-6-entities-priority-management">Step 6: entities priority management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#step-7-enabling-out-of-the-box-alerts-or-create-your-own-custom-alerts">Step 7: enabling out of the box alerts or create your own custom alerts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#final-read-the-docs-and-start-using-trackme">Final: Read the docs and start using TrackMe</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="user-guide">
+<h1>User guide:<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#your-first-steps-with-trackme">Your first steps with TrackMe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#entities-main-setting-update-screens">Entities main setting update screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#hybrid-trackers">Hybrid trackers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#elastic-sources">Elastic sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#outliers-detection-and-behaviour-analytic">Outliers detection and behaviour analytic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#data-sampling-and-event-formats-recognition">Data sampling and event formats recognition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#smart-status">Smart Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#alerts-tracking">Alerts tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#priority-management">Priority management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#monitored-state-enable-disable-buttons">Monitored state (enable / disable buttons)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#week-days-monitoring">Week days monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#hours-ranges-monitoring">Hours ranges monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#monitoring-level">Monitoring level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#maximal-lagging-value">Maximal lagging value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#lagging-classes">Lagging classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#allowlisting-blocklisting">Allowlisting &amp; Blocklisting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#resetting-collections-to-factory-defaults">Resetting collections to factory defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#deletion-of-entities">Deletion of entities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#icon-dynamic-messages">Icon dynamic messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#logical-groups-clusters">Logical groups (clusters)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#alerting-policy-for-data-hosts">Alerting policy for data hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#tags">Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#data-identity-card">Data identity card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#auditing-changes">Auditing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#flipping-statuses-auditing">Flipping statuses auditing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#ops-queues-center">Ops: Queues center</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#ops-parsing-view">Ops: Parsing view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#connected-experience-dashboard-for-splunk-mobile-apple-tv">Connected experience dashboard for Splunk Mobile &amp; Apple TV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#team-working-with-trackme-alerts-and-audit-changes-flow-tracker">Team working with trackMe alerts and audit changes flow tracker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#enrichment-tags">Enrichment tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#maintenance-mode">Maintenance mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userguide.html#backup-and-restore">Backup and restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="itsi_integration.html">Splunk ITSI integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="itsi_integration.html#step-1-entity-search-and-creation">Step 1: entity search and creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itsi_integration.html#step-2-create-the-kpi-base-search-for-metrics">Step 2: create the KPI base search for metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itsi_integration.html#step-3-create-the-kpi-base-searches-for-summary-statuses-events">Step 3: create the KPI base searches for summary statuses events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itsi_integration.html#step-4-create-a-service-that-will-be-used-for-the-service-template-definition">Step 4: create a service that will be used for the service template definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itsi_integration.html#step-5-create-a-service-template">Step 5: create a service template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itsi_integration.html#step-6-fine-tune-thresholds">Step 6: fine tune thresholds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itsi_integration.html#final-create-services-business-and-technical-services-using-trackme-kpis">Final: Create services business and technical services using TrackMe KPIs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cribl_integration.html">Cribl LogStream integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cribl_integration.html#enable-the-cribl-mode">Enable the Cribl mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cribl_integration.html#cribl-mode-data-sources">Cribl mode data sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cribl_integration.html#cribl-logstream-pre-processing-pipelines-and-cribl-pipe-field">Cribl LogStream pre-processing pipelines and cribl_pipe field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cribl_integration.html#handling-both-cribl-mode-and-regular-or-additional-custom-modes">Handling both Cribl mode and regular or additional custom modes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitor_forwarders.html">Monitor Splunk instances forwarding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitor_forwarders.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitor_forwarders.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api_reference.html">REST API Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#rest-api-trackme-spl-command">REST API trackme SPL command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#authentication">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#postman-api-referential-and-development">Postman - API referential and development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#acknowledgment-endpoints">Acknowledgment endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#data-sources-endpoints">Data Sources endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#data-hosts-endpoints">Data Hosts endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#metric-hosts-endpoints">Metric Hosts endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#elastic-sources-endpoints">Elastic Sources endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#maintenance-mode-endpoints">Maintenance mode endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#allow-list-endpoints">Allow list endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#block-list-endpoints">Block list endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#logical-groups-endpoints">Logical Groups endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#data-sampling-endpoints">Data Sampling endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#data-sampling-models-endpoints">Data Sampling models endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#tag-policies-endpoints">Tag policies endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#lagging-classes-endpoints">Lagging classes endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#lagging-classes-metrics-endpoints">Lagging classes metrics endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#smart-status-endpoints">Smart Status endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#backup-and-restore-endpoints">Backup and Restore endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#identity-cards-endpoints">Identity Cards endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rest_api_reference.html#hybrid-trackers-endpoints">Hybrid trackers endpoints</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="troubleshoot">
+<h1>Troubleshoot:<a class="headerlink" href="#troubleshoot" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Troubleshoot</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="versioning-and-build-history">
+<h1>Versioning and build history:<a class="headerlink" href="#versioning-and-build-history" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Versioning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release notes</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="about.html" class="btn btn-neutral float-right" title="About" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2021, TrackMe Limited, U.K..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

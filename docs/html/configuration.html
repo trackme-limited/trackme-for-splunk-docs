@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Installation &mdash; TrackMe 1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User guide" href="userguide.html" />
+    <link rel="prev" title="Deployment &amp; Upgrades" href="deployment.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> TrackMe
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation and configuration</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment &amp; Upgrades</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-deploy-trackme">Step 1: Deploy TrackMe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#where-to-deploy-trackme">Where to deploy TrackMe?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-indexes">Configure indexes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-a-different-naming-convention-for-indexes">Using a different naming convention for indexes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-configure-trackme-to-match-your-needs">Step 2: Configure TrackMe to match your needs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#trackme-components-enablement">TrackMe components enablement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trackme-strategy-for-data-access-what-trackme-will-be-looking-at">TrackMe strategy for data access - What TrackMe will be looking at</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trackme-data-sources-define-what-works-for-you">TrackMe Data Sources - Define what works for you</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#trackme-data-sources-split-mode">Trackme Data Sources - Split mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trackme-data-sources-split-custom-mode">Trackme Data Sources - split custom mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trackme-data-sources-merged-mode">Trackme Data Sources - Merged mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trackme-data-sources-cribl-mode">Trackme Data Sources - Cribl mode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#trackme-data-hosts-define-what-works-for-you">TrackMe Data Hosts - Define what works for you</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trackme-metric-hosts-define-what-works-for-you">TrackMe Metric Hosts - Define what works for you</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-rbac-and-access-policies">Step 3: RBAC and access policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#roles-and-permissions">Roles and permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-privacy">Data privacy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-indexers-macro-definition">Step 4: Indexers macro definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-host-tags-enrichment">Step 5: host tags enrichment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-entities-priority-management">Step 6: entities priority management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-7-enabling-out-of-the-box-alerts-or-create-your-own-custom-alerts">Step 7: enabling out of the box alerts or create your own custom alerts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-out-of-the-box-alerts">Using out of the box alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-custom-alerts-in-assisted-mode">Creating custom alerts in assisted mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#final-read-the-docs-and-start-using-trackme">Final: Read the docs and start using TrackMe</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="itsi_integration.html">Splunk ITSI integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cribl_integration.html">Cribl LogStream integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor_forwarders.html">Monitor Splunk instances forwarding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_api_reference.html">REST API Reference Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Troubleshoot</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versioning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">Release notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TrackMe</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-1-deploy-trackme">
+<h2>Step 1: Deploy TrackMe<a class="headerlink" href="#step-1-deploy-trackme" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="where-to-deploy-trackme">
+<h3>Where to deploy TrackMe?<a class="headerlink" href="#where-to-deploy-trackme" title="Permalink to this headline">¶</a></h3>
+<p><strong>This is generally the first question when it comes to the deployment of Trackme, consider the following depending on your needs and expectations:</strong></p>
+<ul class="simple">
+<li><p>TrackMe is deployed exclusively on a search head layer, there are no components running on forwarders (Universal Forwarders, Heavy Forwarders) or Splunk indexers</p></li>
+<li><p>The search head layer targets depends on your preference, it can be standalone search head (SH) you are using to run monitoring tools, the monitoring console host (MC) or a Search Head Cluster (SHC)</p></li>
+<li><p>The essential part of the content TrackMe is generated in dedicated indexes (summary events and metrics) and non-replicated KVstore collections which have near zero impacts on the search knowledge bundle size that is replicated automatically to your indexers</p></li>
+<li><p>One aspect that can drive your decision is the type of users that will deal with TrackMe, if all of them are Splunk administrators then the Monitoring Console is certainly the best candidate. Otherwise, a Search Head Layer that is designed to accomodate with non administrator users might be more adapted.</p></li>
+</ul>
+</div>
+<div class="section" id="configure-indexes">
+<h3>Configure indexes<a class="headerlink" href="#configure-indexes" title="Permalink to this headline">¶</a></h3>
+<p>Once you decided which search head layer will host TrackMe, the next step is to configure its indexes.</p>
+<p>TrackMe requires the creation of two indexes, one for the summary events and one for the metrics, the second is a metric type of index opposed to events indexes, TrackMe includes the following indexes.conf:</p>
+<p><code class="docutils literal notranslate"><span class="pre">default/indexes.conf</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[trackme_summary]
+coldPath = $SPLUNK_DB/trackme_summary/colddb
+homePath = $SPLUNK_DB/trackme_summary/db
+thawedPath = $SPLUNK_DB/trackme_summary/thaweddb
+
+[trackme_metrics]
+coldPath = $SPLUNK_DB/trackme_metrics/colddb
+homePath = $SPLUNK_DB/trackme_metrics/db
+thawedPath = $SPLUNK_DB/trackme_metrics/thaweddb
+datatype = metric
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Indexes definition on Search Heads and Indexers</p>
+<ul class="simple">
+<li><p>before deploying TrackMe, ensure to declare these indexes on your indexers, in clustering mode this means updating on your indexes on the master-apps and pushing the cluster bundle</p></li>
+<li><p>indexes need to be declared on the search head layer hosting TrackMe too (and other search heads as a good practice), data will not be stored on the search head but this allows autocompletion and collect/mcollect features</p></li>
+<li><p>given that TrackMe comes with a built-in definition as part of the package, you do not need to handle this normally on the search head but on the indexers (unless the default/indexes.conf is trashed via some automation)</p></li>
+</ul>
+</div>
+<p>In well-designed Splunk environments, you will most likely use volumes on the indexers, you would translate this within your indexer configuration to the following configuration potentially:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[trackme_summary]
+coldPath = volume:primary/trackme_summary/colddb
+homePath = volume:primary/trackme_summary/db
+thawedPath = $SPLUNK_DB/trackme_summary/thaweddb
+
+[trackme_metrics]
+coldPath = volume:primary/trackme_metrics/colddb
+homePath = volume:primary/trackme_metrics/db
+thawedPath = $SPLUNK_DB/trackme_metrics/thaweddb
+datatype = metric
+</pre></div>
+</div>
+<p><em>To be adapted depending on your volume configuration!</em></p>
+<div class="section" id="using-a-different-naming-convention-for-indexes">
+<h4>Using a different naming convention for indexes<a class="headerlink" href="#using-a-different-naming-convention-for-indexes" title="Permalink to this headline">¶</a></h4>
+<p>In some cases you may need to use a different naming convention for the two TrackMe indexes, this is not an issue and the only thing you will need to update in the application will be defining the custom configuration in the following two macros:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">trackme_idx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trackme_metrics_idx</span></code></p></li>
+</ul>
+<p>The out of the box definition is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">default/macros.conf</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">trackme_idx</span><span class="p">]</span>
+<span class="n">definition</span> <span class="o">=</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;trackme_summary&quot;</span>
+<span class="n">iseval</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="p">[</span><span class="n">trackme_metrics_idx</span><span class="p">]</span>
+<span class="n">definition</span> <span class="o">=</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;trackme_metrics&quot;</span>
+<span class="n">iseval</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Up to your choice, you can do this manually in the same time you deploy TrackMe (in a local/macros.conf) or you can update this within the UI once the application has been deployed:</p>
+<p><code class="docutils literal notranslate"><span class="pre">TrackMe</span> <span class="pre">manage</span> <span class="pre">and</span> <span class="pre">configure</span></code></p>
+<a class="with-border reference internal image-reference" href="_images/ui_update_indexes.png"><img alt="ui_update_indexes.png" class="with-border align-center" src="_images/ui_update_indexes.png" style="width: 1200px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-configure-trackme-to-match-your-needs">
+<h2>Step 2: Configure TrackMe to match your needs<a class="headerlink" href="#step-2-configure-trackme-to-match-your-needs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="trackme-components-enablement">
+<h3>TrackMe components enablement<a class="headerlink" href="#trackme-components-enablement" title="Permalink to this headline">¶</a></h3>
+<p><strong>You can decide to enable or disable TrackMe components in the configuration user interface:</strong></p>
+<a class="with-border reference internal image-reference" href="_images/components1.png"><img alt="components1.png" class="with-border align-center" src="_images/components1.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/components2.png"><img alt="components2.png" class="with-border align-center" src="_images/components2.png" style="width: 1200px;" /></a>
+<p><strong>When a component is disabled:</strong></p>
+<ul class="simple">
+<li><p>It is not visible anymore in the main TrackMe UI</p></li>
+<li><p>The associated tracker reports do not execute any longer the trackers, and will output a simple message mentioning that the component is disabled instead</p></li>
+</ul>
+<p><strong>For instance, if you wish to use only the Data sources tracking component:</strong></p>
+<a class="with-border reference internal image-reference" href="_images/components3.png"><img alt="components3.png" class="with-border align-center" src="_images/components3.png" style="width: 1200px;" /></a>
+<a class="with-border reference internal image-reference" href="_images/components4.png"><img alt="components4.png" class="with-border align-center" src="_images/components4.png" style="width: 1200px;" /></a>
+<p><em>The tracker executor logs would show:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">index</span><span class="o">=</span><span class="n">_internal</span> <span class="n">sourcetype</span><span class="o">=</span><span class="n">trackme</span><span class="p">:</span><span class="n">custom_commands</span><span class="p">:</span><span class="n">trackmetrackerexecutor</span> <span class="s2">&quot;disabled&quot;</span>
+</pre></div>
+</div>
+<p><em>example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">05</span> <span class="mi">11</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">37</span><span class="p">,</span><span class="mi">043</span> <span class="n">INFO</span> <span class="n">trackmetrackerexecutor</span><span class="o">.</span><span class="n">py</span> <span class="n">generate</span> <span class="mi">148</span> <span class="n">The</span> <span class="n">metric</span> <span class="n">hosts</span> <span class="n">tracking</span> <span class="n">component</span> <span class="ow">is</span> <span class="n">currently</span> <span class="n">disabled</span><span class="p">,</span> <span class="n">nothing</span> <span class="n">to</span> <span class="n">do</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="trackme-strategy-for-data-access-what-trackme-will-be-looking-at">
+<h3>TrackMe strategy for data access - What TrackMe will be looking at<a class="headerlink" href="#trackme-strategy-for-data-access-what-trackme-will-be-looking-at" title="Permalink to this headline">¶</a></h3>
+<p>The first thing to consider once your deployed TrackMe is to design your strategy for which data TrackMe will be monitoring.</p>
+<p>By default, TrackMe will search efficiently (tstats based queries for events) against any index the search head can access, you can choose between <strong>two</strong> main strategies:</p>
+<ul class="simple">
+<li><p>Either you use <code class="docutils literal notranslate"><span class="pre">allow</span> <span class="pre">listing</span></code> features to restrict access to explicit list of indexes</p></li>
+<li><p>Either you use <code class="docutils literal notranslate"><span class="pre">block</span> <span class="pre">listing</span></code> features to be looking at everything <strong>but</strong> specific items you exclude explicitly (indexes, sourcetypes, hosts and so forth)</p></li>
+</ul>
+<p>Both approaches are configurable via the TrackMe UI, and both approaches have its advantages and disadvantages:</p>
+<ul class="simple">
+<li><p>Allow listing is the cleaner and more efficient way but requires that you have a deep knowledge of your environment</p></li>
+<li><p>Allow listing can lead to be missing things you should have been tracking if not configured properly nor maintained over time</p></li>
+<li><p>Block listing can require more work over time as you need to exclude the bad things you do not want to consider</p></li>
+</ul>
+<p>The two approaches are not exclusive, you can use allow listing AND block listing! This means you can restrict the basic index access scope AND block list certain things you do not want to consider.</p>
+<p>See <a class="reference internal" href="userguide.html#allowlisting-blocklisting"><span class="std std-ref">Allowlisting &amp; Blocklisting</span></a> in the User guide.</p>
+<p><em>Interface to allow listing and block listing definitions:</em></p>
+<a class="with-border reference internal image-reference" href="_images/allowlist_and_blocklist.png"><img alt="allowlist_and_blocklist.png" class="with-border align-center" src="_images/allowlist_and_blocklist.png" style="width: 800px;" /></a>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Each TrackMe component have their own definitions for allow and block listing: <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">sources</span></code>, <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">hosts</span></code> and <code class="docutils literal notranslate"><span class="pre">Metric</span> <span class="pre">hosts</span></code></p>
+</div>
+<p>You can define the strategy while you are starting to use TrackMe, and gradually configure what TrackMe accesses to depending on your environment and requirements.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><strong>TrackMe auto-diagnostic for Data hosts and Metric hosts tracking components</strong></p>
+<ul class="simple">
+<li><p>At the first execution of the trackers, the auto-diagnostic component will inspect the allow list configuration for Data hosts tracking and Metric hosts tracking</p></li>
+<li><p>If it detects that allow listing is not configured yet, it will proceed automatically to its configuration by adding the _internal index for Data hosts tracking, and the _metrics index for Metric hosts tracking</p></li>
+<li><p>The auto-diagnostic component performs these steps automatically to avoid running potentially expensive searches until you configure additional indexes, according to your needs</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="trackme-data-sources-define-what-works-for-you">
+<h3>TrackMe Data Sources - Define what works for you<a class="headerlink" href="#trackme-data-sources-define-what-works-for-you" title="Permalink to this headline">¶</a></h3>
+<p>The primary concept of TrackMe is called <strong>data sources</strong>, See <a class="reference internal" href="userguide.html#data-sources-tracking-and-features"><span class="std std-ref">Data Sources tracking and features</span></a> in the User guide for more explanations.</p>
+<p>For the purposes of defining the best strategy that works for you, let’s explain the different modes available, which you can configure via the <code class="docutils literal notranslate"><span class="pre">Trackme</span> <span class="pre">manage</span> <span class="pre">and</span> <span class="pre">configure</span></code> interface:</p>
+<ul class="simple">
+<li><p>Split mode (default)</p></li>
+<li><p>Split custom mode</p></li>
+<li><p>Merged mode</p></li>
+<li><p>Cribl mode</p></li>
+</ul>
+<a class="with-border reference internal image-reference" href="_images/ui_data_sources_mode.png"><img alt="ui_data_sources_mode.png" class="with-border align-center" src="_images/ui_data_sources_mode.png" style="width: 1200px;" /></a>
+<p>See <a class="reference internal" href="userguide.html#your-first-steps-with-trackme"><span class="std std-ref">Your first steps with TrackMe</span></a> for more details in the <a class="reference internal" href="userguide.html#user-guide"><span class="std std-ref">User guide</span></a> to start with tracking concepts</p>
+<div class="section" id="trackme-data-sources-split-mode">
+<h4>Trackme Data Sources - Split mode<a class="headerlink" href="#trackme-data-sources-split-mode" title="Permalink to this headline">¶</a></h4>
+<p>The Split mode is the default mode that TrackMe uses, in this mode, the application discovers, classifies and creates entities based on:</p>
+<p><code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">+</span> <span class="pre">&quot;:&quot;</span> <span class="pre">+</span> <span class="pre">sourcetype</span></code></p>
+<p>Let’s take the following simple example, we index Windows Events logs Application, System and Security WinEventLogs each WinEventLog in a specific index, we would endup with 3 entities, for instance:</p>
+<ul class="simple">
+<li><p>oswinsec:XmlWinEventLog</p></li>
+<li><p>oswinapp:XmlWinEventLog</p></li>
+<li><p>oswinsys:XmlWinEventLog</p></li>
+</ul>
+<p>On the other hand, would we index these 3 WinEventLogs into a unique index, we would end up with 1 entity only, which covers (meaning TrackMe is looking at) all of the logs:</p>
+<ul class="simple">
+<li><p>oswin:XmlWinEventLog</p></li>
+</ul>
+<p>Don’t worry, TrackMe has plenty of features that allow you to cover any use cases (Elastic Sources, allow and block listing, etc), the Split mode is generally what covers most use cases, but this is very depending to your context.</p>
+</div>
+<div class="section" id="trackme-data-sources-split-custom-mode">
+<h4>Trackme Data Sources - split custom mode<a class="headerlink" href="#trackme-data-sources-split-custom-mode" title="Permalink to this headline">¶</a></h4>
+<p>The Split custom mode allows you to define an additional indexed field to be used when discovering and maintaining the data sources.</p>
+<p>Once you define the indexed field, entities are going to be created as following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">+</span> <span class="pre">&quot;:&quot;</span> <span class="pre">+</span> <span class="pre">sourcetype</span> <span class="pre">+</span> <span class="pre">&quot;|&lt;keyName&gt;:&lt;keyValue&gt;</span></code></p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">keyName</span></code> is the name of the indexed field, <code class="docutils literal notranslate"><span class="pre">keyValue</span></code> the value.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Once enabled, any data source that does not include the indexed field will not be discovered any longer, you can handle any additional use cases as <a class="reference internal" href="userguide.html#elastic-sources"><span class="std std-ref">Elastic sources</span></a> or create custom trackers in hybrid mode.</p>
+</div>
+</div>
+<div class="section" id="trackme-data-sources-merged-mode">
+<h4>Trackme Data Sources - Merged mode<a class="headerlink" href="#trackme-data-sources-merged-mode" title="Permalink to this headline">¶</a></h4>
+<p>The Merged mode removes the concept of sourcetype and basically creates 1 entity per index, no matters what sourcetypes are indexed in it, entities are created as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">+</span> <span class="pre">&quot;:all&quot;</span></code></p>
+<p>This mode can potentially be interesting for you if you dedicate each index to a specific data flow, and you know by design that this is what you care about.</p>
+</div>
+<div class="section" id="trackme-data-sources-cribl-mode">
+<h4>Trackme Data Sources - Cribl mode<a class="headerlink" href="#trackme-data-sources-cribl-mode" title="Permalink to this headline">¶</a></h4>
+<p>If you are using Cribl, you can integrate TrackMe transparently and get benefits from the Cribl design very easily, in the Cribl mode, we create Data sources based on:</p>
+<p><code class="docutils literal notranslate"><span class="pre">index</span> <span class="pre">+</span> <span class="pre">&quot;:&quot;</span> <span class="pre">+</span> <span class="pre">sourcetype</span> <span class="pre">+</span> <span class="pre">&quot;|cribl:&quot;</span> <span class="pre">+</span> <span class="pre">cribl_pipe</span></code></p>
+<p>For a complete review of the Cribl mode, see <a class="reference internal" href="cribl_integration.html#cribl-logstream-integration"><span class="std std-ref">Cribl LogStream integration</span></a></p>
+<p>Finally, note that if you enable the Cribl mode, TrackMe will only discover automatically data sources coming via Cribl.</p>
+</div>
+</div>
+<div class="section" id="trackme-data-hosts-define-what-works-for-you">
+<h3>TrackMe Data Hosts - Define what works for you<a class="headerlink" href="#trackme-data-hosts-define-what-works-for-you" title="Permalink to this headline">¶</a></h3>
+<p>The second big concept in TrackMe is called <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">hosts</span></code>, this basically means tracking the activity of host sending data to Splunk, from the <code class="docutils literal notranslate"><span class="pre">host</span> <span class="pre">Splunk</span> <span class="pre">Metadata</span></code> point of view.</p>
+<p>There are two modes available, called <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">hosts</span> <span class="pre">global</span> <span class="pre">alerting</span> <span class="pre">policy</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">granular</span> <span class="pre">by</span> <span class="pre">host</span></code>: instructs TrackMe to consider turning a host red only if there are no more sourcetypes emitting data for that hosts according to the various configuration items</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">granular</span> <span class="pre">by</span> <span class="pre">sourcetype</span></code>:  instructs TrackMe to consider each sourcetype individually by host, including their own max lagging rules, to determine if a host is having issues or not</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>This defines the global policy applied by default on all data hosts, this can be overridden on a per host basis if needed</p>
+</div>
+<p><em>Configuration of the global policy mode in the management UI:</em></p>
+<a class="with-border reference internal image-reference" href="_images/data_hosts_allerting_policy_config.png"><img alt="data_hosts_allerting_policy_config.png" class="with-border align-center" src="_images/data_hosts_allerting_policy_config.png" style="width: 1200px;" /></a>
+<p>See <a class="reference internal" href="userguide.html#alerting-policy-for-data-hosts"><span class="std std-ref">Alerting policy for data hosts</span></a> for more details in the <a class="reference internal" href="userguide.html#user-guide"><span class="std std-ref">User guide</span></a> to start with data hosts tracking</p>
+<p><strong>Behaviour examples:</strong></p>
+<p><em>Alerting policy track per sourcetype:</em></p>
+<a class="with-border reference internal image-reference" href="_images/lagging_class_override_data_hosts_ex3.png"><img alt="lagging_class_override_data_hosts_ex3.png" class="with-border align-center" src="_images/lagging_class_override_data_hosts_ex3.png" style="width: 1200px;" /></a>
+<p><em>Alerting policy track per host:</em></p>
+<a class="with-border reference internal image-reference" href="_images/lagging_class_override_data_hosts_ex4.png"><img alt="lagging_class_override_data_hosts_ex4.png" class="with-border align-center" src="_images/lagging_class_override_data_hosts_ex4.png" style="width: 1200px;" /></a>
+<p>Choosing which mode complies with your requirements all depends on how deep and how granular you need to be monitoring data hosts, many users will be happy with the default mode and would use the granular mode for specific entities, others will need to ensure to track hosts in a very detailed way, your choice!</p>
+</div>
+<div class="section" id="trackme-metric-hosts-define-what-works-for-you">
+<h3>TrackMe Metric Hosts - Define what works for you<a class="headerlink" href="#trackme-metric-hosts-define-what-works-for-you" title="Permalink to this headline">¶</a></h3>
+<p>The last big concept is called <code class="docutils literal notranslate"><span class="pre">metric</span> <span class="pre">hosts</span></code> tracking, this basically monitors all hosts (from the Splunk Metadata point of view) sending metrics to the metric store indexes.</p>
+<p>There are specific configuration or mode to choose for metric hosts, your configuration will essentially be based on:</p>
+<ul class="simple">
+<li><p>Allow and Block listing to define which indexes and metric categories you want to track</p></li>
+<li><p>Defining threshold policies to configure what delay is acceptable or not on per metric category basis</p></li>
+</ul>
+<p>See <a class="reference internal" href="userguide.html#metric-hosts-tracking-and-features"><span class="std std-ref">Metric Hosts tracking and features</span></a> in the <a class="reference internal" href="userguide.html#user-guide"><span class="std std-ref">User guide</span></a> to start with metric hosts tracking</p>
+</div>
+</div>
+<div class="section" id="step-3-rbac-and-access-policies">
+<h2>Step 3: RBAC and access policies<a class="headerlink" href="#step-3-rbac-and-access-policies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="roles-and-permissions">
+<h3>Roles and permissions<a class="headerlink" href="#roles-and-permissions" title="Permalink to this headline">¶</a></h3>
+<p><strong>TrackMe can be used by different populations of users, depending on the size of your Splunk implementation its maturity, essentially:</strong></p>
+<ul class="simple">
+<li><p>Splunk administrators that responsible for the daily monitoring and maintenance of the Splunk deployment</p></li>
+<li><p>Ingestion teams responsible for that ingestion data flow from the providers to Splunk (could be the Splunk administrators, or not)</p></li>
+<li><p>Department teams that care about their own data sources and need to be able to understand what is available to them and the data source states</p></li>
+<li><p>Management</p></li>
+<li><p>maybe more!</p></li>
+</ul>
+<p><strong>From the application point of view, this essentially means two types of profiles:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">trackme</span> <span class="pre">admins</span></code> that can achieve modifications of what is tracked, and how</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trackme</span> <span class="pre">users</span></code> that are looking at entities, without being allowed to perform changes</p></li>
+</ul>
+<p><strong>Fortunately, TrackMe handles this for you, and provides two types of roles you can use or import to properly define the level of permissions needed:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">trackme_admin</span></code> role</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trackme_user</span></code> role</p></li>
+</ul>
+<p>These roles define write or read only permissions on the various objects TrackMe depends on, essentially stored in many KVstore collections.</p>
+<p><strong>Make sure to inherit, or make user member of these roles accordingly.</strong></p>
+<a class="with-border reference internal image-reference" href="_images/trackme_roles.png"><img alt="trackme_roles.png" class="with-border align-center" src="_images/trackme_roles.png" style="width: 1200px;" /></a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>capabilities for trackme_admin:</strong></p>
+<ul class="simple">
+<li><p>the capability <code class="docutils literal notranslate"><span class="pre">list_settings</span></code> is required for trackme admins that are not privileged users, to be able to run actions doing updates via the TrackMe rest endpoints</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="data-privacy">
+<h3>Data privacy<a class="headerlink" href="#data-privacy" title="Permalink to this headline">¶</a></h3>
+<p>While TrackMe’s job is monitoring data, it does generate its own data as well, and especially it is tracking and performing data quality assessments in the scope of a very powerful feature called <a class="reference internal" href="userguide.html#data-sampling-and-event-formats-recognition"><span class="std std-ref">Data sampling and event formats recognition</span></a>.</p>
+<p>This results in samples of real events being stored in a dedicated KVstore collection <code class="docutils literal notranslate"><span class="pre">trackme_data_sampling</span></code>, managed via the data sampling workflow:</p>
+<img alt="data_sampling_main.png" class="with-border align-center" src="_images/data_sampling_main.png" />
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">trackme_data_sampling</span></code> is only available in read mode to users member of the <code class="docutils literal notranslate"><span class="pre">trackme_user</span></code> and <code class="docutils literal notranslate"><span class="pre">trackme_admin</span></code> roles, bellow is the default.meta stanzas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">transforms</span><span class="o">/</span><span class="n">trackme_data_sampling</span><span class="p">]</span>
+<span class="n">access</span> <span class="o">=</span> <span class="n">read</span> <span class="p">:</span> <span class="p">[</span> <span class="n">admin</span><span class="p">,</span> <span class="n">trackme_admin</span><span class="p">,</span> <span class="n">trackme_user</span> <span class="p">],</span> <span class="n">write</span> <span class="p">:</span> <span class="p">[</span> <span class="n">admin</span><span class="p">,</span> <span class="n">trackme_admin</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="n">collections</span><span class="o">/</span><span class="n">kv_trackme_data_sampling</span><span class="p">]</span>
+<span class="n">access</span> <span class="o">=</span> <span class="n">read</span> <span class="p">:</span> <span class="p">[</span> <span class="n">admin</span><span class="p">,</span> <span class="n">trackme_admin</span><span class="p">,</span> <span class="n">trackme_user</span> <span class="p">],</span> <span class="n">write</span> <span class="p">:</span> <span class="p">[</span> <span class="n">admin</span><span class="p">,</span> <span class="n">trackme_admin</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>If you are concerned about this activity, if for some reasons TrackMe users (and even admins) are not supposed to be able to see samples of real events that TrackMe is looking at, you can enable the <a class="reference internal" href="userguide.html#data-sampling-obfuscation-mode"><span class="std std-ref">Data Sampling obfuscation mode</span></a>:</p>
+<a class="with-border reference internal image-reference" href="_images/data_sampling_obfuscate.png"><img alt="data_sampling_obfuscate.png" class="with-border align-center" src="_images/data_sampling_obfuscate.png" style="width: 1200px;" /></a>
+<ul class="simple">
+<li><p>In the default mode, that is <code class="docutils literal notranslate"><span class="pre">Disable</span> <span class="pre">Data</span> <span class="pre">Sampling</span> <span class="pre">obfuscation</span> <span class="pre">mode</span></code>, events that are sampled are stored in the data sampling KVstore collection and can be used to review the results from the latest sampling operation</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">Data</span> <span class="pre">Sampling</span> <span class="pre">obfuscation</span> <span class="pre">mode</span></code>, events are not stored anymore and replaced by an admin message, the sampling processing still happens the same way but events cannot be reviewed anymore using the latest sample traces</p></li>
+<li><p>In such a case, when then obfuscation mode is enabled, users will need to either run the rules manually to locate the messages that were captured to the conditions being met (bad format, PII data, etc) or use the Smart <a class="reference internal" href="userguide.html#smart-status"><span class="std std-ref">Smart Status</span></a> feature to have TrackMe run this operation on demand</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="step-4-indexers-macro-definition">
+<h2>Step 4: Indexers macro definition<a class="headerlink" href="#step-4-indexers-macro-definition" title="Permalink to this headline">¶</a></h2>
+<p><strong>TrackMe provides different views that are related to the Splunk pipelines and queues, such as:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ops:</span> <span class="pre">Queues</span> <span class="pre">Center</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ops:</span> <span class="pre">Parsing</span> <span class="pre">Issues</span></code></p></li>
+<li><p>In entities tab <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Parsing</span> <span class="pre">Quality</span></code></p></li>
+</ul>
+<p><strong>All searches underneath rely on the definition of a macro:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># defined pattern filter for indexers</span>
+<span class="p">[</span><span class="n">trackme_idx_filter</span><span class="p">]</span>
+<span class="n">definition</span> <span class="o">=</span> <span class="n">host</span><span class="o">=</span><span class="n">idx</span><span class="o">*</span>
+<span class="n">iseval</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p><em>In TrackMe manage and configure:</em></p>
+<a class="with-border reference internal image-reference" href="_images/trackme_idx_filter.png"><img alt="trackme_idx_filter.png" class="with-border align-center" src="_images/trackme_idx_filter.png" style="width: 1200px;" /></a>
+<p>Make sure to update this definition accordingly to match your indexers and potentially Heavy Forwarders naming convention.</p>
+<p><em>view example:</em></p>
+<a class="with-border reference internal image-reference" href="_images/ops_parsing_issues.png"><img alt="ops_parsing_issues.png" class="with-border align-center" src="_images/ops_parsing_issues.png" style="width: 1200px;" /></a>
+</div>
+<div class="section" id="step-5-host-tags-enrichment">
+<h2>Step 5: host tags enrichment<a class="headerlink" href="#step-5-host-tags-enrichment" title="Permalink to this headline">¶</a></h2>
+<p><strong>OPTIONAL: tags enrichment for data and metric hosts</strong></p>
+<p><strong>This step is optional and depends on your context:</strong></p>
+<div class="admonition-tags-enrichment-feature admonition">
+<p class="admonition-title">Tags enrichment feature</p>
+<p>Tags enrichment is made available when investigating a data or metric host within the user interface, to provide valuable context and get benefit from assets information available in the Splunk deployment.</p>
+</div>
+<a class="with-border reference internal image-reference" href="_images/macro_tags.png"><img alt="macro_tags.png" class="with-border align-center" src="_images/macro_tags.png" style="width: 1200px;" /></a>
+<p><strong>Splunk Enterprise Security assets usage:</strong></p>
+<p>If TrackMe is running on the same search head than Enterprise Security and you wish to use its assets knowledge, customize the macro with <code class="docutils literal notranslate"><span class="pre">`get_asset(data_host)`</span></code> for data hosts, and <code class="docutils literal notranslate"><span class="pre">`get_asset(metric_host)`</span></code> for metric hosts.</p>
+<p>If Enterprise Security is running on a different search head, one option is to define a summary scheduled report on the ES search head, then a scheduled report that will use the summary data to automatically build a copy of Enterprise Security assets lookup. (asset_lookup_by_str) Customize the macro with a call to <code class="docutils literal notranslate"><span class="pre">lookup</span> <span class="pre">lookup</span> <span class="pre">name_of_lookup</span> <span class="pre">key</span> <span class="pre">as</span> <span class="pre">data_host</span></code> for data_hosts, and <code class="docutils literal notranslate"><span class="pre">lookup</span> <span class="pre">name_of_lookup</span> <span class="pre">key</span> <span class="pre">as</span> <span class="pre">metric_host</span></code> for metric_hosts.</p>
+<p><strong>Any kind of CMDB data available in Splunk:</strong></p>
+<p>Similarly, you can use any lookup available in the Splunk instance which provides Assets context looking up a key which in most cases would be host name, dns name or IP address.</p>
+<p>Make sure your asset lookup definition is exported to the system, is case insensitive and contains the relevant information, then customize the macros depending on your configuration, example: <code class="docutils literal notranslate"><span class="pre">lookup</span> <span class="pre">name_of_lookup</span> <span class="pre">key</span> <span class="pre">as</span> <span class="pre">data_hosts</span></code> for data hosts, <code class="docutils literal notranslate"><span class="pre">lookup</span> <span class="pre">name_of_lookup</span> <span class="pre">key</span> <span class="pre">as</span> <span class="pre">metric_hosts</span></code> for metric hosts.</p>
+</div>
+<div class="section" id="step-6-entities-priority-management">
+<h2>Step 6: entities priority management<a class="headerlink" href="#step-6-entities-priority-management" title="Permalink to this headline">¶</a></h2>
+<p><strong>OTIONAL: third party priority definition</strong></p>
+<p><strong>When TrackMe discovers a new entity, a level of priority is defined by default:</strong></p>
+<ul class="simple">
+<li><p>by default, entities are added as <code class="docutils literal notranslate"><span class="pre">medium</span></code> priority</p></li>
+<li><p>this is controlled via the macro <code class="docutils literal notranslate"><span class="pre">trackme_default_priority</span></code></p></li>
+<li><p>TrackMe accepts 3 levels of priorities: <code class="docutils literal notranslate"><span class="pre">low</span></code> / <code class="docutils literal notranslate"><span class="pre">medium</span></code> / <code class="docutils literal notranslate"><span class="pre">high</span></code></p></li>
+<li><p>The UIs will threat differently <code class="docutils literal notranslate"><span class="pre">high</span></code> priority entities to highlight top critical issues in the Splunk environments</p></li>
+</ul>
+<p>See <a class="reference internal" href="userguide.html#priority-management"><span class="std std-ref">Priority management</span></a> in the <a class="reference internal" href="userguide.html#user-guide"><span class="std std-ref">User guide</span></a> for more details.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>How TrackMe manages the priority value</p>
+<ul class="simple">
+<li><p>Once a priority is defined for an entity in its collection, this value is always preserved upon iterations of TrackMe jobs or update operations</p></li>
+<li><p>If a collection is reset by an admin, the priority value that was assigned is lost and will be replaced by the system affected priority value</p></li>
+</ul>
+</div>
+<p>TrackMe does not provide third party integration to define the priority, especially because this would be very likely highly depending on every single user context..</p>
+<p>However, because TrackMe relies on KVstore based lookups, it is very straightforward to create your own workflow to enrich and define the entities priority level from any other data you have in Splunk such as a CMDB lookup or Enterprise Security Assets.</p>
+<p><em>For example, you could define the following scheduled report that updates the priority based on third party enrichment:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">inputlookup</span> <span class="n">trackme_host_monitoring</span> <span class="o">|</span> <span class="nb">eval</span> <span class="n">key</span><span class="o">=</span><span class="n">_key</span>
+<span class="o">|</span> <span class="n">lookup</span> <span class="n">asset_lookup_by_str</span> <span class="n">key</span> <span class="k">as</span> <span class="n">data_host</span> <span class="n">OUTPUT</span> <span class="n">priority</span> <span class="k">as</span> <span class="n">es_priority</span>
+<span class="o">|</span> <span class="nb">eval</span> <span class="n">priority</span><span class="o">=</span><span class="n">case</span><span class="p">(</span>
+   <span class="n">isnull</span><span class="p">(</span><span class="n">es_priority</span><span class="p">)</span> <span class="n">OR</span> <span class="n">es_priority</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">priority</span><span class="p">,</span>
+   <span class="n">es_priority</span><span class="o">=</span><span class="s2">&quot;low&quot;</span><span class="p">,</span> <span class="n">es_priority</span><span class="p">,</span>
+   <span class="n">es_priority</span><span class="o">=</span><span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="n">es_priority</span><span class="p">,</span>
+   <span class="n">es_priority</span><span class="o">=</span><span class="s2">&quot;high&quot;</span> <span class="n">OR</span> <span class="n">es_priority</span><span class="o">=</span><span class="s2">&quot;critical&quot;</span><span class="p">,</span> <span class="n">es_priority</span>
+<span class="p">)</span>
+<span class="o">|</span> <span class="n">fields</span> <span class="o">-</span> <span class="n">es_priority</span>
+<span class="o">|</span> <span class="n">outputlookup</span> <span class="n">trackme_host_monitoring</span> <span class="n">append</span><span class="o">=</span><span class="n">t</span> <span class="n">key_field</span><span class="o">=</span><span class="n">key</span>
+<span class="o">|</span> <span class="n">stats</span> <span class="n">c</span>
+</pre></div>
+</div>
+<p>Such a report would be scheduled to run daily or so, and would automatically maintain the priority definition based on an external integration.</p>
+</div>
+<div class="section" id="step-7-enabling-out-of-the-box-alerts-or-create-your-own-custom-alerts">
+<h2>Step 7: enabling out of the box alerts or create your own custom alerts<a class="headerlink" href="#step-7-enabling-out-of-the-box-alerts-or-create-your-own-custom-alerts" title="Permalink to this headline">¶</a></h2>
+<p><strong>Since TrackMe 1.2.39, a dedicated screen allows to manage alerts within TrackMe, and create your own alert in assisted mode:</strong></p>
+<div class="section" id="using-out-of-the-box-alerts">
+<h3>Using out of the box alerts<a class="headerlink" href="#using-out-of-the-box-alerts" title="Permalink to this headline">¶</a></h3>
+<p><strong>TrackMe provides out of the box alerts that can be used to deliver alerting when a monitored component reaches a red state:</strong></p>
+<ul class="simple">
+<li><p>TrackMe - Alert on data source availability</p></li>
+<li><p>TrackMe - Alert on data host availability</p></li>
+<li><p>TrackMe - Alert on metric host availability</p></li>
+</ul>
+<p><strong>In TrackMe main screen, go to the tracking alerts tab:</strong></p>
+<a class="with-border reference internal image-reference" href="_images/ootb_alerts.png"><img alt="ootb_alerts.png" class="with-border align-center" src="_images/ootb_alerts.png" style="width: 1200px;" /></a>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Out of the box alerts</p>
+<ul class="simple">
+<li><p>Out of the box alerts are disabled by default, you need to enable alerts to start using them</p></li>
+<li><p>Alerts will trigger by default on <code class="docutils literal notranslate"><span class="pre">high</span> <span class="pre">priority</span></code> entities only, this is controlled via the macro definition <code class="docutils literal notranslate"><span class="pre">trackme_alerts_priority</span></code></p></li>
+<li><p>Edit the alert to perform your third party integration, for example <code class="docutils literal notranslate"><span class="pre">sending</span> <span class="pre">emails</span></code> or creating <code class="docutils literal notranslate"><span class="pre">JIRA</span> <span class="pre">issues</span></code> based on Splunk alert actions capabilities</p></li>
+<li><p>Out of the box alert enable by default two TrackMe alert actions, <code class="docutils literal notranslate"><span class="pre">automatic</span> <span class="pre">acknowledgement</span></code> and the <code class="docutils literal notranslate"><span class="pre">Smart</span> <span class="pre">Status</span></code> alert actions</p></li>
+<li><p>The results of the <code class="docutils literal notranslate"><span class="pre">Smart</span> <span class="pre">Status</span></code> alert action are automatically indexed in the TrackMe summary index within the sourcetype <code class="docutils literal notranslate"><span class="pre">trackme_smart_status</span></code> and can be used for investigation purposes</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="creating-custom-alerts-in-assisted-mode">
+<h3>Creating custom alerts in assisted mode<a class="headerlink" href="#creating-custom-alerts-in-assisted-mode" title="Permalink to this headline">¶</a></h3>
+<p><strong>You can use this interface to a create one or more custom alerts:</strong></p>
+<a class="with-border reference internal image-reference" href="_images/img001.png"><img alt="img001.png" class="with-border align-center" src="_images/img001.png" style="width: 1200px;" /></a>
+<p><strong>This opens the assistant where you can choose between different builtin options depending on the type of entities to be monitoring:</strong></p>
+<a class="with-border reference internal image-reference" href="_images/img002.png"><img alt="img002.png" class="with-border align-center" src="_images/img002.png" style="width: 800px;" /></a>
+<p>Once you have created a new alert, it will be immediately visible in the tracking alerts UI, and you can use the Splunk built alert editor to modify the alert to up to your needs such as enabling third party actions, emails actions and so forth.</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Custom alert features</p>
+<ul class="simple">
+<li><p>Creating custom alerts provide several layers of flexibility depending on your choices and preferences</p></li>
+<li><p>You may for example have alerts handling lowest level of prority with a specific type of alert action, and have a specific alert for highly critical entities</p></li>
+<li><p>Advanced setup can easily be performed such as getting benefits from the tags features and multiple alerts using tag policies to associate data sources and different types of alerts, recipients, actions…</p></li>
+<li><p>You may decide if you wish to enable or disable the TrackMe <code class="docutils literal notranslate"><span class="pre">auto</span> <span class="pre">acknowledgement</span></code> and <code class="docutils literal notranslate"><span class="pre">Smart</span> <span class="pre">Status</span></code> alert actions while creating alerts through the assistant</p></li>
+</ul>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="final-read-the-docs-and-start-using-trackme">
+<h2>Final: Read the docs and start using TrackMe<a class="headerlink" href="#final-read-the-docs-and-start-using-trackme" title="Permalink to this headline">¶</a></h2>
+<p>TrackMe is a large, powerful and rich in features Splunk application that goes way beyond these initial configuration steps, there are many more features to discover and handle.</p>
+<p><strong>When you start the integration of TrackMe especially in large environments, it is generally a good approach to:</strong></p>
+<ul class="simple">
+<li><p>Focus progressively on highly valuable pieces of data, such as data sources used to feed the SOC use cases, the NOC alerts, etc</p></li>
+<li><p>Use the priority level and tag policies to qualify and immediately get incredible value from TrackMe</p></li>
+<li><p>Use policies for lagging definition rather per entity definition (then you can reset collections if you need!)</p></li>
+<li><p>Use tag policies to identify and define data context for even better filtering and value</p></li>
+<li><p>Use Identity cards to provide context for TrackMe admins and users, and document or refer to your very own documentations</p></li>
+</ul>
+<p>Reviewing these simple steps should put you on track easily, continue with reading the <a class="reference internal" href="userguide.html#user-guide"><span class="std std-ref">User guide</span></a> for a full coverage!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="userguide.html" class="btn btn-neutral float-right" title="User guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="deployment.html" class="btn btn-neutral float-left" title="Deployment &amp; Upgrades" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2018-2021, TrackMe Limited, U.K..
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
