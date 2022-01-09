@@ -60,4 +60,4 @@ No matters the purpose of your Splunk deployment, trackMe will easily become an 
 - PII data detection with custom regular expression based rules and data sampling
 - many more!
 
-**Please consult the online documentation:** https://trackme-limited.github.io/trackme-for-splunk/
+**Please consult the online documentation:** https://trackme-limited.github.io/trackme-for-splunk-docs/
